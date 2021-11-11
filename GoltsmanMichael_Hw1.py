@@ -1,8 +1,13 @@
-number = input("Введите число, а мы превратим его в четверку: ")
-true_number = int(number)
-print("Сначала умножим на два, получим ", (true_number*2))
-print("Прибавим к результату 8, получим ", ((true_number*2)+8))
-print("Разделим результат на 2, получим ", ((((true_number*2)+8)//2)))
-print("А теперь вычтем загаданное Вами число и получим...", ((((true_number*2)+8)//2 - true_number)))
-
-testing commit n git
+com_emails = 0
+for i in range(0, 999):
+    email = input()
+    if email == "STOP":
+        break
+    email_stripped = email.strip()
+    if (email_stripped.count('@') != 1) or (email_stripped.count('.') < 2):
+        print(f"invalid email {email}, please try again:")
+    else:
+        non_cyrillic_email = email_stripped.replace("с", "c")
+        if non_cyrillic_email.rfind('.com') == len(non_cyrillic_email) - 4:
+            com_emails += 1
+print(com_emails)
